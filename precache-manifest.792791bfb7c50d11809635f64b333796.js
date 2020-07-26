@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ab02963cdf2bdc3d6c10838f4e57e08a",
+    "revision": "25386791bed40fef270d092c64c3b905",
     "url": "/numgames/index.html"
   },
   {
-    "revision": "302aac0eb5216a4c8180",
+    "revision": "0c96a411c10b7efe3c2a",
     "url": "/numgames/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "112f220931546c4c4e91",
-    "url": "/numgames/static/js/2.a2216763.chunk.js"
+    "revision": "1d65322380304d57ce8b",
+    "url": "/numgames/static/js/2.6d00dee4.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/numgames/static/js/2.a2216763.chunk.js.LICENSE.txt"
+    "url": "/numgames/static/js/2.6d00dee4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "302aac0eb5216a4c8180",
-    "url": "/numgames/static/js/main.23e4cc94.chunk.js"
+    "revision": "0c96a411c10b7efe3c2a",
+    "url": "/numgames/static/js/main.ee5e9bac.chunk.js"
   },
   {
     "revision": "440ef298a563bb4f925b",
