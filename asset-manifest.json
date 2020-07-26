@@ -1,23 +1,25 @@
 {
   "files": {
     "main.css": "/numgames/static/css/main.5f361e03.chunk.css",
-    "main.js": "/numgames/static/js/main.5752cde1.chunk.js",
-    "main.js.map": "/numgames/static/js/main.5752cde1.chunk.js.map",
+    "main.js": "/numgames/static/js/main.23e4cc94.chunk.js",
+    "main.js.map": "/numgames/static/js/main.23e4cc94.chunk.js.map",
     "runtime-main.js": "/numgames/static/js/runtime-main.9a16887b.js",
     "runtime-main.js.map": "/numgames/static/js/runtime-main.9a16887b.js.map",
-    "static/js/2.592804bf.chunk.js": "/numgames/static/js/2.592804bf.chunk.js",
-    "static/js/2.592804bf.chunk.js.map": "/numgames/static/js/2.592804bf.chunk.js.map",
+    "static/js/2.a2216763.chunk.js": "/numgames/static/js/2.a2216763.chunk.js",
+    "static/js/2.a2216763.chunk.js.map": "/numgames/static/js/2.a2216763.chunk.js.map",
     "index.html": "/numgames/index.html",
-    "precache-manifest.7a0d9fd3694156c1df304fac08535ea3.js": "/numgames/precache-manifest.7a0d9fd3694156c1df304fac08535ea3.js",
+    "precache-manifest.95005b24b70aa5a8671dff09f434172c.js": "/numgames/precache-manifest.95005b24b70aa5a8671dff09f434172c.js",
     "service-worker.js": "/numgames/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/numgames/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.592804bf.chunk.js.LICENSE.txt": "/numgames/static/js/2.592804bf.chunk.js.LICENSE.txt",
+    "static/js/2.a2216763.chunk.js.LICENSE.txt": "/numgames/static/js/2.a2216763.chunk.js.LICENSE.txt",
+    "static/media/buzzer.mp3": "/numgames/static/media/buzzer.bba88b52.mp3",
+    "static/media/cheers1.mp3": "/numgames/static/media/cheers1.8059c7c9.mp3",
     "static/media/logo.svg": "/numgames/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9a16887b.js",
-    "static/js/2.592804bf.chunk.js",
+    "static/js/2.a2216763.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.5752cde1.chunk.js"
+    "static/js/main.23e4cc94.chunk.js"
   ]
 }
