@@ -1,5 +1,26 @@
 
 import React from 'react';
+import UIFx from 'uifx';
+import buzzerAudio from './assets/sounds/buzzer.mp3';
+import cheerAudio from './assets/sounds/cheers1.mp3';
+/* Both the audio clips are from https://freesfx.co.uk/ */
+
+
+const buzzer = new UIFx(
+	  buzzerAudio,
+	  {
+		      volume: 0.4, // number between 0.0 ~ 1.0
+		      throttleMs: 100
+		    }
+)
+const cheer = new UIFx(
+	  cheerAudio,
+	  {
+		      volume: 0.4, // number between 0.0 ~ 1.0
+		      throttleMs: 100
+		    }
+)
+
 function Score(props)
 {
   return(<text style={{fontSize:40}}> Your score is : <span style={{color:'orange'}}>{props.score}/{props.nq}</span> </text>);
@@ -71,8 +92,15 @@ class Game extends React.Component
   {
     const mscore=this.state.score;
     
-    if((this.state.isBefore && this.state.answer== this.state.mynum-1) || (!this.state.isBefore && this.state.answer==this.state.mynum+1)) {this.setState({isCorrect:true,answerStatusText:String.fromCodePoint("0x1F913"), score: mscore+1,})}
-    else {this.setState({isCorrect:false,answerStatusText:String.fromCodePoint("0x1F62D")})}
+    if((this.state.isBefore && this.state.answer== this.state.mynum-1) || (!this.state.isBefore && this.state.answer==this.state.mynum+1))
+	  {
+		  this.setState({isCorrect:true,answerStatusText:String.fromCodePoint("0x1F913"), score: mscore+1,});
+		  cheer.play();
+	  }
+    else {
+	    this.setState({isCorrect:false,answerStatusText:String.fromCodePoint("0x1F62D")});
+	    buzzer.play();
+             }
   }
   
   handleAnswerChange(event)
