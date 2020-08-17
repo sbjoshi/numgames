@@ -7,6 +7,11 @@ import cheerAudio from './assets/sounds/cheers1.mp3';
 
 const lb = 1;
 const ub = 5;
+const correctAnswerEmoji="0x1F913";
+const wrongAnswerEmoji="0x1F62D";
+const objEmojis = ["0x1F408","0x1F9AE","0x1F404","0x1F416","0x1F411","0x1F42A"]
+
+
 
 const buzzer = new UIFx(
 	  buzzerAudio,
@@ -43,6 +48,21 @@ function AnswerStatus(props)
       
     }
   return(<text style={c,fsize}> {props.text} </text>);
+}
+
+function getEmojiString(n1,n2)
+{
+	var emoji1 = objEmojis[Math.floor(Math.random()*objEmojis.length)];
+	var emoji2 = objEmojis[Math.floor(Math.random()*objEmojis.length)];
+	var str1 = String.fromCodePoint(emoji1).repeat(n1);
+	var str2 = String.fromCodePoint(emoji1).repeat(n2);
+	return str1.concat("+",str2);
+}
+
+function DisplayObjects(props)
+{
+ let fsize={fontSize:40}; 
+  return (<text style={fsize}> {getEmojiString(props.n1,props.n2)} </text>);
 }
 
 function AddQuestion(props)
@@ -119,6 +139,7 @@ class Game extends React.Component
    <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
         
         <br/>
+	    <DisplayObjects n1={this.state.num1} n2={this.state.num2} /> <br/>
         <button style={{fontSize:40}} onClick={this.handleAnswerSubmit} disabled={this.state.isCorrect}>
           Submit </button>
         <button  style={{fontSize:40}} onClick={this.generateNewQuestion}> Play another </button>
