@@ -2,7 +2,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NameForm from './BeforeAfter'
+//import NameForm from './BeforeAfter'
+import NameForm from './Addition'
 
 /*function App() {
   return (
