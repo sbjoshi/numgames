@@ -9,7 +9,7 @@ const lb = 1;
 const ub = 5;
 const correctAnswerEmoji="0x1F913";
 const wrongAnswerEmoji="0x1F62D";
-const objEmojis = ["0x1F408","0x1F9AE","0x1F404","0x1F416","0x1F411","0x1F42A"]
+const objEmojis = ["0x1F408","0x1F9AE","0x1F404","0x1F416","0x1F411","0x1F42A", "0x1F992", "0x1F418", "0x1F98F", "0x1F400", "0x1F407", "0x1F43F", "0x1F987", "0x1F998"]
 
 
 
@@ -50,19 +50,17 @@ function AnswerStatus(props)
   return(<text style={c,fsize}> {props.text} </text>);
 }
 
-function getEmojiString(n1,n2)
+function getEmojiString(e,n1,n2)
 {
-	var emoji1 = objEmojis[Math.floor(Math.random()*objEmojis.length)];
-	var emoji2 = objEmojis[Math.floor(Math.random()*objEmojis.length)];
-	var str1 = String.fromCodePoint(emoji1).repeat(n1);
-	var str2 = String.fromCodePoint(emoji1).repeat(n2);
+	var str1 = String.fromCodePoint(e).repeat(n1);
+	var str2 = String.fromCodePoint(e).repeat(n2);
 	return str1.concat("+",str2);
 }
 
 function DisplayObjects(props)
 {
  let fsize={fontSize:40}; 
-  return (<text style={fsize}> {getEmojiString(props.n1,props.n2)} </text>);
+  return (<text style={fsize}> {getEmojiString(props.emoji,props.n1,props.n2)} </text>);
 }
 
 function AddQuestion(props)
@@ -89,7 +87,7 @@ class Game extends React.Component
   constructor(props)
   {
     super(props);
-    this.state={num1: getRandomNum(lb,ub), num2: getRandomNum(lb,ub), answer:'', isCorrect:false, answerStatusText:'',score: 0,numQuestions: 1,}
+    this.state={emojiIndex: objEmojis[Math.floor(Math.random()*objEmojis.length)], num1: getRandomNum(lb,ub), num2: getRandomNum(lb,ub), answer:'', isCorrect:false, answerStatusText:'',score: 0,numQuestions: 1,}
     this.handleAnswerChange=this.handleAnswerChange.bind(this);
     this.handleAnswerSubmit=this.handleAnswerSubmit.bind(this);
     this.generateNewQuestion=this.generateNewQuestion.bind(this);
@@ -106,7 +104,8 @@ class Game extends React.Component
     const nq = this.state.numQuestions+1;
     let n1 = getRandomNum(lb,ub);
     let n2 = getRandomNum(lb,ub);
-    this.setState({num1: n1, num2: n2,answerStatusText:'',answer:'', isCorrect: false,numQuestions: nq,});
+	  let emoji = objEmojis[Math.floor(Math.random()*objEmojis.length)];
+    this.setState({emojiIndex: emoji, num1: n1, num2: n2,answerStatusText:'',answer:'', isCorrect: false,numQuestions: nq,});
   }
   handleAnswerSubmit()
   {
@@ -139,7 +138,7 @@ class Game extends React.Component
    <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
         
         <br/>
-	    <DisplayObjects n1={this.state.num1} n2={this.state.num2} /> <br/>
+	    <DisplayObjects emoji={this.state.emojiIndex} n1={this.state.num1} n2={this.state.num2} /> <br/>
         <button style={{fontSize:40}} onClick={this.handleAnswerSubmit} disabled={this.state.isCorrect}>
           Submit </button>
         <button  style={{fontSize:40}} onClick={this.generateNewQuestion}> Play another </button>
