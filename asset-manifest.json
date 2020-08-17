@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/numgames/static/css/main.523f09c5.chunk.css",
-    "main.js": "/numgames/static/js/main.e7972ae0.chunk.js",
-    "main.js.map": "/numgames/static/js/main.e7972ae0.chunk.js.map",
+    "main.js": "/numgames/static/js/main.d1446ebf.chunk.js",
+    "main.js.map": "/numgames/static/js/main.d1446ebf.chunk.js.map",
     "runtime-main.js": "/numgames/static/js/runtime-main.9a16887b.js",
     "runtime-main.js.map": "/numgames/static/js/runtime-main.9a16887b.js.map",
     "static/js/2.6d00dee4.chunk.js": "/numgames/static/js/2.6d00dee4.chunk.js",
     "static/js/2.6d00dee4.chunk.js.map": "/numgames/static/js/2.6d00dee4.chunk.js.map",
     "index.html": "/numgames/index.html",
-    "precache-manifest.f7971a5df95c2804b67665fec1bc51a2.js": "/numgames/precache-manifest.f7971a5df95c2804b67665fec1bc51a2.js",
+    "precache-manifest.8889fef75139da08013fe47463261947.js": "/numgames/precache-manifest.8889fef75139da08013fe47463261947.js",
     "service-worker.js": "/numgames/service-worker.js",
     "static/css/main.523f09c5.chunk.css.map": "/numgames/static/css/main.523f09c5.chunk.css.map",
     "static/js/2.6d00dee4.chunk.js.LICENSE.txt": "/numgames/static/js/2.6d00dee4.chunk.js.LICENSE.txt",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.9a16887b.js",
     "static/js/2.6d00dee4.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.e7972ae0.chunk.js"
+    "static/js/main.d1446ebf.chunk.js"
   ]
 }
