@@ -8,24 +8,31 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 
-export default function GameChoiceForm() {
-  const [value, setValue] = React.useState('addition');
+class  GameChoiceForm extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
-  const handleChange = (event) => {
+ /* const [value, setValue] = React.useState('addition');*/
+
+/*  const handleChange = (event) => {
     setValue(event.target.value);
-  };
-
+  }; */
+render() {
   return (
-    <FormControl component="fieldset">
+    <FormControl component="fieldset"> 
       <FormLabel component="legend">Game Type</FormLabel> 
-	  <TextField id="standard-basic" label="Name" />
-      <RadioGroup aria-label="gender" name="gamechoice" value={value} onChange={handleChange}>
-        <FormControlLabel value="addition" control={<Radio />} label="Addition" />
-        <FormControlLabel value="beforeAfter" control={<Radio />} label="BeforeAfter" />
+	  <TextField id="standard-basic" label="Name" onChange={this.props.textChangeHandler}/>
+      <RadioGroup aria-label="Game Choice" name="gamechoice" onChange={this.props.choiceChangeHandler}>
+        <FormControlLabel value="2" control={<Radio />} label="Addition" />
+        <FormControlLabel value="1" control={<Radio />} label="BeforeAfter" />
       </RadioGroup>
-	  <Button variant="outlined" color="primary" href="#outlined-buttons">
+	  <Button variant="outlined" color="primary" href="#outlined-buttons" onClick={this.props.submitHandler}>
   Submit
 </Button>
-    </FormControl>
+    </FormControl> 
   );
 }
+}
+
+export default GameChoiceForm;

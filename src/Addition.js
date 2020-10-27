@@ -82,7 +82,7 @@ function getRandomNum(l, u)
 	return Math.floor(Math.random()*u+l);
 }
 
-class Game extends React.Component
+class GameAddition extends React.Component
 {
   constructor(props)
   {
@@ -148,6 +148,7 @@ class Game extends React.Component
   
 }
 
+/*
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -188,6 +189,9 @@ class NameForm extends React.Component {
 }
 
 export default NameForm;
+*/
+
+export default GameAddition;
 
 /*
 ReactDOM.render(

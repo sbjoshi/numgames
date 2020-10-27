@@ -64,7 +64,7 @@ function MyQuestion(props)
     
 }
 
-class Game extends React.Component
+class GameBeforeAfter extends React.Component
 {
   constructor(props)
   {
@@ -129,6 +129,7 @@ class Game extends React.Component
   
 }
 
+/*
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -166,9 +167,9 @@ class NameForm extends React.Component {
       </form>
     );
   }
-}
+} */
 
-export default NameForm;
+export default GameBeforeAfter;
 
 /*
 ReactDOM.render(

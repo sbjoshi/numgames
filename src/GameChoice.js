@@ -11,6 +11,8 @@ import UIFx from 'uifx';
 import buzzerAudio from './assets/sounds/buzzer.mp3';
 import cheerAudio from './assets/sounds/cheers1.mp3';
 import GameChoiceForm from './GameChoiceButtons';
+import GameAddition from './Addition';
+import GameBeforeAfter from './BeforeAfter';
 /* Both the audio clips are from https://freesfx.co.uk/ */
 
 const lb = 1;
@@ -193,26 +195,33 @@ class NameForm extends React.Component {
     super(props);
     this.state = {value: '', isInitialized: false, gc: ''};
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+	  this.gameChoiceChange=this.gameChoiceChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+	gameChoiceChange(event) {
+		this.setState({gc: event.target.value});
+	}
 
-  handleChange(event) {
+  handleNameChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('x: ' + this.state.value);
     this.setState({isInitialized:true});
     event.preventDefault();
   }
 
   render() {
-    if(this.state.isInitialized)
+    if(this.state.isInitialized && this.state.gc==1)
       return(
         <div><h1> Hello, {this.state.value}!</h1> 
-      <Game/></div>);
-    else
+      <GameBeforeAfter/></div>);
+    else if(this.state.isInitialized && this.state.gc==2)
+	  return (
+		  <div><h1> Hello, {this.state.value}! </h1>
+		  <GameAddition/> </div>);
+	  else 
     return (
 /*      <form onSubmit={this.handleSubmit}  noValidate autoComplete="off">
         <label>
@@ -225,7 +234,7 @@ class NameForm extends React.Component {
 	<GameChoiceForm />  <br/>
         <input type="submit" value="Submit" />
       </form>*/
-	    <GameChoiceForm />
+	    <GameChoiceForm textChangeHandler={this.handleNameChange} choiceChangeHandler={this.gameChoiceChange} submitHandler={this.handleSubmit}/>
     );
   }
 }
