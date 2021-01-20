@@ -3,6 +3,15 @@ import React from 'react';
 import UIFx from 'uifx';
 import buzzerAudio from './assets/sounds/buzzer.mp3';
 import cheerAudio from './assets/sounds/cheers1.mp3';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import FormLabel from '@material-ui/core/FormLabel';
+import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 /* Both the audio clips are from https://freesfx.co.uk/ */
 
 const lb = 1;
@@ -30,7 +39,8 @@ const cheer = new UIFx(
 
 function Score(props)
 {
-  return(<text style={{fontSize:40}}> Your score is : <span style={{color:'blue'}}>{props.score}/{props.nq}</span> </text>);
+//  return(<text style={{fontSize:40}}> Your score is : <span style={{color:'blue'}}>{props.score}/{props.nq}</span> </text>);
+  return(<Typography variant='h4'> Your score is : <span style={{color:'blue'}}>{props.score}/{props.nq}</span> </Typography>);
   
 }
 function AnswerStatus(props)
@@ -70,8 +80,9 @@ function AddQuestion(props)
  let fsize={fontSize:40}; 
       c={color:'magenta'};
       
-  return (<text style={fsize}> What is  <span style={c}>{props.n1} </span> + <span style={c}> {props.n2} </span>?
-      </text>);
+  return (<Typography variant='h4'> What is  <span style={c}>{props.n1} </span> + <span style={c}> {props.n2} </span>? </Typography>);
+ // return (<text style={fsize}> What is  <span style={c}>{props.n1} </span> + <span style={c}> {props.n2} </span>?
+    //  </text>);
       
     
 }
@@ -127,21 +138,45 @@ class GameAddition extends React.Component
     this.setState({answer:event.target.value});
   }
   
-  render()
+/* render()
   {
     return(
       <div>
         <Score score={this.state.score} nq={this.state.numQuestions}/> <br/>
         <AddQuestion n1={this.state.num1} n2={this.state.num2} />
+	    <TextField id="answer-text" variant="outlined" autoFocus style={{fontSize:40}} maxLength="2" size="2" value={this.state.answer} onChange={this.handleAnswerChange}/>
       <input autoFocus style={{fontSize:40}} type="text" maxLength="2" size="2" value={this.state.answer} onChange={this.handleAnswerChange} 
         ref={(input) => { this.nameInput = input; }} />
    <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
         
         <br/>
 	    <DisplayObjects emoji={this.state.emojiIndex} n1={this.state.num1} n2={this.state.num2} /> <br/>
-        <button style={{fontSize:40}} onClick={this.handleAnswerSubmit} disabled={this.state.isCorrect}>
-          Submit </button>
-        <button  style={{fontSize:40}} onClick={this.generateNewQuestion}> Play another </button>
+
+	  <Button variant="outlined" style={{fontSize:40}} color="primary" href="#outlined-buttons" onClick={this.handleAnswerSubmit} disabled={this.state.isCorrect}>
+	    Submit </Button>
+	    <Button variant="outlined" style={{fontSize:40}} color="primary" href="#outlined-buttons" onClick={this.generateNewQuestion}>
+	    Play another </Button>
+        </div>);
+    
+  }*/
+
+  render()
+  {
+    return(
+      <div>
+        <Score score={this.state.score} nq={this.state.numQuestions}/> <br/>
+        <AddQuestion n1={this.state.num1} n2={this.state.num2} />
+	    <TextField id="answer-text" variant="outlined" autoFocus inputProps={{style: {fontSize:30}}} maxLength="2" size="2" value={this.state.answer} onChange={this.handleAnswerChange}
+	    ref={(input)=>{this.nameInput=input;}}/>
+   <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
+        
+        <br/>
+	    <DisplayObjects emoji={this.state.emojiIndex} n1={this.state.num1} n2={this.state.num2} /> <br/>
+
+	  <Button variant="outlined" style={{fontSize:40}} color="primary" href="#outlined-buttons" onClick={this.handleAnswerSubmit} disabled={this.state.isCorrect}>
+	    Submit </Button>
+	    <Button variant="outlined" style={{fontSize:40}} color="primary" href="#outlined-buttons" onClick={this.generateNewQuestion}>
+	    Play another </Button>
         </div>);
     
   }
