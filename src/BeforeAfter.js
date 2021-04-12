@@ -84,7 +84,7 @@ class GameBeforeAfter extends React.Component
   generateNewQuestion()
   {
     const nq = this.state.numQuestions+1;
-    let r = Math.floor(Math.random()*99+1);
+    let r = Math.floor(Math.random()*999+1);
     let b = (Math.random()<0.5);
     this.setState({isBefore:b,mynum:r,answerStatusText:'',answer:'', isCorrect: false,numQuestions: nq,});
   }
@@ -115,7 +115,7 @@ class GameBeforeAfter extends React.Component
       <div>
         <Score score={this.state.score} nq={this.state.numQuestions}/> <br/>
         <MyQuestion order={comp} number={this.state.mynum} />
-      <input autoFocus style={{fontSize:40}} type="text" maxLength="2" size="2" value={this.state.answer} onChange={this.handleAnswerChange} 
+      <input autoFocus style={{fontSize:40}} type="text" maxLength="4" size="4" value={this.state.answer} onChange={this.handleAnswerChange} 
         ref={(input) => { this.nameInput = input; }} />
    <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
         
