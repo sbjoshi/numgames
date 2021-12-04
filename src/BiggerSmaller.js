@@ -113,13 +113,14 @@ class GameBiggerSmaller extends React.Component
     this.handleAnswerSubmit=this.handleAnswerSubmit.bind(this);
     this.generateNewQuestion=this.generateNewQuestion.bind(this);
   };
-  
+ /* 
   componentDidMount(){
     this.nameInput.focus();
   }
   componentDidUpdate(){
     this.nameInput.focus();
   }
+  */
   generateNewQuestion()
   {
     const nq = this.state.numQuestions+1;
@@ -182,8 +183,8 @@ class GameBiggerSmaller extends React.Component
       <div>
         <Score score={this.state.score} nq={this.state.numQuestions}/> <br/>
         <AddQuestion n1={this.state.num1} n2={this.state.num2} isSmaller={this.state.isSmaller} />
-	    <TextField id="answer-text" variant="outlined" autoFocus inputProps={{style: {fontSize:30}}} maxLength="4" size="4" value={this.state.answer} onChange={this.handleAnswerChange}
-	    ref={(input)=>{this.nameInput=input;}}/>
+	    <TextField id="answer-text" variant="outlined"  autoFocus inputProps={{style: {fontSize:30}}} maxLength="4" size="4" value={this.state.answer} onChange={this.handleAnswerChange}
+	  inputRef={(input) => { if(input!=null) {input.focus();} }} />
    <AnswerStatus isCorrect={this.state.isCorrect} text={this.state.answerStatusText}/>
         
         <br/>
