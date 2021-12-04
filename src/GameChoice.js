@@ -13,6 +13,7 @@ import cheerAudio from './assets/sounds/cheers1.mp3';
 import GameChoiceForm from './GameChoiceButtons';
 import GameAddition from './Addition';
 import GameBeforeAfter from './BeforeAfter';
+import GameBiggerSmaller from './BiggerSmaller';
 /* Both the audio clips are from https://freesfx.co.uk/ */
 
 const lb = 1;
@@ -221,7 +222,11 @@ class NameForm extends React.Component {
 	  return (
 		  <div><h1> Hello, {this.state.value}! </h1>
 		  <GameAddition/> </div>);
+    else if(this.state.isInitialized && this.state.gc==3)
+	  return ( <div><h1> Hello, {this.state.value}! </h1>
+		  <GameBiggerSmaller/> </div>);
 	  else 
+
     return (
 /*      <form onSubmit={this.handleSubmit}  noValidate autoComplete="off">
         <label>

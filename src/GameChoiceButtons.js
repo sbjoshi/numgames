@@ -25,6 +25,7 @@ render() {
 	  <TextField id="standard-basic" label="Name" onChange={this.props.textChangeHandler}/>
       <RadioGroup aria-label="Game Choice" name="gamechoice" onChange={this.props.choiceChangeHandler}>
         <FormControlLabel value="2" control={<Radio />} label="Addition" />
+        <FormControlLabel value="3" control={<Radio />} label="BiggerOrSmaller" />
         <FormControlLabel value="1" control={<Radio />} label="BeforeAfter" />
       </RadioGroup>
 	  <Button variant="outlined" color="primary" href="#outlined-buttons" onClick={this.props.submitHandler}>
