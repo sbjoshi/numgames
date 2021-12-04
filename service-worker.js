@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/numgames/precache-manifest.a6604f2088bd74e37e6d059ea6a19a7a.js"
+  "/numgames/precache-manifest.d038a1cc36fbf9328b35adb7cc71714e.js"
 );
 
 self.addEventListener('message', (event) => {
